@@ -1,18 +1,15 @@
-import 'dart:io';
 import 'package:file_picker/file_picker.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:chitt/core/di/service_locator.dart';
+import 'package:chitt/core/domain/repositories/i_storage_repository.dart';
 import 'package:chitt/services/database_service.dart';
 
-/// Shared service for document management (upload, delete, etc.)
 class DocumentService {
-  // Singleton
   static final DocumentService _instance = DocumentService._internal();
   factory DocumentService() => _instance;
   DocumentService._internal();
 
-  /// Pick documents using file picker
-  /// Returns list of picked files or empty list if cancelled
+  IStorageRepository get _repo => getIt<IStorageRepository>();
+
   Future<List<PlatformFile>> pickDocuments({bool allowMultiple = true}) async {
     try {
       final result = await FilePicker.platform.pickFiles(
@@ -21,10 +18,7 @@ class DocumentService {
         allowMultiple: allowMultiple,
       );
 
-      if (result == null || result.files.isEmpty) {
-        return [];
-      }
-
+      if (result == null || result.files.isEmpty) return [];
       return result.files.where((f) => f.path != null).toList();
     } catch (e) {
       print('Error picking documents: $e');
@@ -32,79 +26,28 @@ class DocumentService {
     }
   }
 
-  /// Ensure user is authenticated for Firebase Storage access
-  Future<void> ensureAuthenticated() async {
-    if (FirebaseAuth.instance.currentUser == null) {
-      try {
-        await FirebaseAuth.instance.signInAnonymously();
-        print('Signed in anonymously for document upload');
-      } catch (e) {
-        print('Error signing in anonymously: $e');
-        rethrow;
-      }
-    }
-  }
+  Future<void> ensureAuthenticated() => _repo.ensureAuthenticated();
 
-  /// Upload a single document to Firebase Storage
-  /// Returns document metadata map with url, name, type, uploadedAt
   Future<Map<String, dynamic>> uploadDocument({
     required String userId,
     required PlatformFile file,
-  }) async {
-    await ensureAuthenticated();
+  }) => _repo.uploadDocument(userId: userId, file: file);
 
-    final ref = FirebaseStorage.instance.ref().child(
-      'documents/$userId/${DateTime.now().millisecondsSinceEpoch}_${file.name}',
-    );
-
-    await ref.putFile(File(file.path!));
-    final url = await ref.getDownloadURL();
-
-    return {
-      'name': file.name,
-      'url': url,
-      'type': file.extension ?? '',
-      'uploadedAt': DateTime.now().toIso8601String(),
-    };
-  }
-
-  /// Upload multiple documents
-  /// Returns list of document metadata maps
   Future<List<Map<String, dynamic>>> uploadDocuments({
     required String userId,
     required List<PlatformFile> files,
-  }) async {
-    final List<Map<String, dynamic>> uploadedDocs = [];
+  }) => _repo.uploadDocuments(userId: userId, files: files);
 
-    await ensureAuthenticated();
-
-    for (var file in files) {
-      if (file.path != null) {
-        final docData = await uploadDocument(userId: userId, file: file);
-        uploadedDocs.add(docData);
-      }
-    }
-
-    return uploadedDocs;
-  }
-
-  /// Add a document to an existing member
-  /// Handles the full flow: pick, upload, update database
   Future<Map<String, dynamic>?> addDocumentToMember({
     required String userId,
     required List<Map<String, dynamic>> existingDocuments,
     required Map<String, dynamic> memberData,
   }) async {
-    // Pick file
     final files = await pickDocuments(allowMultiple: false);
     if (files.isEmpty) return null;
 
     final file = files.first;
-
-    // Upload
     final docData = await uploadDocument(userId: userId, file: file);
-
-    // Update member in database
     final newDocsList = [...existingDocuments, docData];
 
     final firstName = memberData['firstName'] ?? '';
@@ -122,13 +65,8 @@ class DocumentService {
     return docData;
   }
 
-  /// Get properly typed documents list from member data
   List<Map<String, dynamic>> getDocumentsList(dynamic documents) {
-    if (documents == null) return [];
-    if (documents is! List) return [];
-
-    return documents.map((doc) {
-      return Map<String, dynamic>.from(doc as Map);
-    }).toList();
+    if (documents == null || documents is! List) return [];
+    return documents.map((doc) => Map<String, dynamic>.from(doc as Map)).toList();
   }
 }

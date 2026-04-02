@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "914502595800",
+    "firebase_url": "https://chitti-project-11fab-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "chitti-project-11fab",
+    "storage_bucket": "chitti-project-11fab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914502595800:android:6871780d5715c8077fd3ad",
+        "android_client_info": {
+          "package_name": "com.example.chitt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB84-rmRNwO0V9DpBMksqhz_C7ouMhG7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

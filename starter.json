@@ -1,0 +1,95 @@
+{
+  "users": {
+    "admin_001": {
+      "username": "admin",
+      "password": "admin",
+      "role": "organiser",
+      "fullName": "Admin User",
+      "phone": "+919876543210",
+      "email": "admin@chittiapp.com",
+      "createdAt": 1715000000000
+    },
+    "user_001": {
+      "username": "user",
+      "password": "user",
+      "role": "user",
+      "fullName": "Demo User",
+      "phone": "+919876543211",
+      "email": "user@chittiapp.com",
+      "createdAt": 1715000000000,
+      "chittis": {
+        "chitti_001": {
+          "joinedAt": 1715100000000,
+          "status": "active"
+        }
+      }
+    },
+    "user_002": {
+      "username": "rahul",
+      "password": "password123",
+      "role": "user",
+      "fullName": "Rahul Sharma",
+      "phone": "+919876543212",
+      "email": "rahul@example.com",
+      "createdAt": 1715000000000
+    },
+    "user_003": {
+      "username": "priya",
+      "password": "password123",
+      "role": "user",
+      "fullName": "Priya Patel",
+      "phone": "+919876543213",
+      "email": "priya@example.com",
+      "createdAt": 1715000000000
+    }
+  },
+  "chittis": {
+    "chitti_001": {
+      "name": "Gold Savings 2024",
+      "duration": "20 Months",
+      "startMonth": "January 2024",
+      "maxSlots": 20,
+      "status": "active",
+      "createdAt": 1715000000000,
+      "goldOptions": [
+        {
+          "weight": "8g",
+          "price": 5000,
+          "totalAmount": 100000
+        },
+        {
+          "weight": "16g",
+          "price": 10000,
+          "totalAmount": 200000
+        }
+      ],
+      "members": {
+        "user_001": {
+          "slots": ["#1"],
+          "goldOption": {
+            "weight": "8g",
+            "price": 5000
+          },
+          "totalAmount": 100000,
+          "joinedAt": 1715100000000
+        }
+      }
+    },
+    "chitti_002": {
+      "name": "Diwali Special Chitti",
+      "duration": "12 Months",
+      "startMonth": "November 2024",
+      "maxSlots": 50,
+      "status": "filling",
+      "createdAt": 1716000000000,
+      "goldOptions": [
+        {
+          "weight": "4g",
+          "price": 2500,
+          "totalAmount": 30000
+        }
+      ],
+      "members": {}
+    }
+  }
+}

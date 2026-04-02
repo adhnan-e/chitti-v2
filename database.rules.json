@@ -1,0 +1,42 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "users": {
+      ".indexOn": [
+        "username",
+        "phone"
+      ]
+    },
+    "chittis": {
+      ".indexOn": [
+        "status",
+        "createdAt",
+        "startMonth"
+      ]
+    },
+    "payments": {
+      ".indexOn": [
+        "chittiId",
+        "userId",
+        "paidAt",
+        "month"
+      ]
+    },
+    "transactions": {
+      ".indexOn": [
+        "slotId",
+        "chittiId",
+        "monthKey",
+        "status",
+        "createdAt"
+      ]
+    },
+    "lucky_draws": {
+      ".indexOn": [
+        "chittiId",
+        "declaredAt"
+      ]
+    }
+  }
+}

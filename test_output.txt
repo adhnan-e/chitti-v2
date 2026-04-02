@@ -1,0 +1,119 @@
+00:00 +0: loading /Users/adhnan/Development/chitt/test/widget_test.dart                                                                                                                                00:01 +0: loading /Users/adhnan/Development/chitt/test/widget_test.dart                                                                                                                                00:02 +0: loading /Users/adhnan/Development/chitt/test/widget_test.dart                                                                                                                                00:02 +0: (setUpAll)                                                                                                                                                                                   00:02 +0: App starts with SplashScreen                                                                                                                                                                 00:02 +0: App starts with SplashScreen
+Pumped MyApp
+Pending timers:
+Timer (duration: 0:00:02.000000, periodic: false), created:
+#0      new FakeTimer._ (package:fake_async/fake_async.dart:342:62)
+#1      FakeAsync._createTimer (package:fake_async/fake_async.dart:260:29)
+#2      FakeAsync.run.<anonymous closure> (package:fake_async/fake_async.dart:185:15)
+#6      _SplashScreenState.initState (package:chitt/screens/splash_screen.dart:15:12)
+#7      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5842:55)
+#8      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5691:5)
+...     Normal element mounting (228 frames)
+#236    Element.inflateWidget (package:flutter/src/widgets/framework.dart:4539:16)
+#237    MultiChildRenderObjectElement.inflateWidget (package:flutter/src/widgets/framework.dart:7159:36)
+#238    MultiChildRenderObjectElement.mount (package:flutter/src/widgets/framework.dart:7175:32)
+...     Normal element mounting (463 frames)
+#701    Element.inflateWidget (package:flutter/src/widgets/framework.dart:4539:16)
+#702    Element.updateChild (package:flutter/src/widgets/framework.dart:3998:20)
+#703    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#704    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#705    ProxyElement.update (package:flutter/src/widgets/framework.dart:6041:5)
+#706    _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:108:11)
+#707    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#708    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#709    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5874:11)
+#710    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#711    StatefulElement.update (package:flutter/src/widgets/framework.dart:5899:5)
+#712    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#713    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#714    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#715    ProxyElement.update (package:flutter/src/widgets/framework.dart:6041:5)
+#716    _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:108:11)
+#717    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#718    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#719    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5874:11)
+#720    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#721    StatefulElement.update (package:flutter/src/widgets/framework.dart:5899:5)
+#722    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#723    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#724    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5874:11)
+#725    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#726    StatefulElement.update (package:flutter/src/widgets/framework.dart:5899:5)
+#727    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#728    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#729    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#730    ProxyElement.update (package:flutter/src/widgets/framework.dart:6041:5)
+#731    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#732    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#733    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5874:11)
+#734    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#735    StatefulElement.update (package:flutter/src/widgets/framework.dart:5899:5)
+#736    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#737    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#738    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#739    ProxyElement.update (package:flutter/src/widgets/framework.dart:6041:5)
+#740    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#741    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#742    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#743    ProxyElement.update (package:flutter/src/widgets/framework.dart:6041:5)
+#744    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#745    _RawViewElement._updateChild (package:flutter/src/widgets/view.dart:481:16)
+#746    _RawViewElement.update (package:flutter/src/widgets/view.dart:569:5)
+#747    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#748    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#749    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#750    StatelessElement.update (package:flutter/src/widgets/framework.dart:5787:5)
+#751    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#752    ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5738:16)
+#753    StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5874:11)
+#754    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#755    StatefulElement.update (package:flutter/src/widgets/framework.dart:5899:5)
+#756    Element.updateChild (package:flutter/src/widgets/framework.dart:3982:15)
+#757    RootElement._rebuild (package:flutter/src/widgets/binding.dart:1698:16)
+#758    RootElement.update (package:flutter/src/widgets/binding.dart:1676:5)
+#759    RootElement.performRebuild (package:flutter/src/widgets/binding.dart:1690:7)
+#760    Element.rebuild (package:flutter/src/widgets/framework.dart:5427:7)
+#761    BuildScope._tryRebuild (package:flutter/src/widgets/framework.dart:2694:15)
+#762    BuildScope._flushDirtyElements (package:flutter/src/widgets/framework.dart:2752:11)
+#763    BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:3056:18)
+#764    AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:1515:19)
+#765    RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:495:5)
+#766    SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1438:15)
+#767    SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1351:9)
+#768    AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:1340:9)
+#771    TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#772    AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:1329:27)
+#773    WidgetTester.pumpWidget.<anonymous closure> (package:flutter_test/src/widget_tester.dart:599:22)
+#776    TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#777    WidgetTester.pumpWidget (package:flutter_test/src/widget_tester.dart:596:27)
+#778    main.<anonymous closure> (file:///Users/adhnan/Development/chitt/test/widget_test.dart:14:18)
+#779    testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:29)
+<asynchronous suspension>
+#780    TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 8 frames from dart:async and package:stack_trace)
+
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+A Timer is still pending even after the widget tree was disposed.
+'package:flutter_test/src/binding.dart':
+Failed assertion: line 1626 pos 12: '!timersPending'
+
+When the exception was thrown, this was the stack:
+#2      AutomatedTestWidgetsFlutterBinding._verifyInvariants (package:flutter_test/src/binding.dart:1626:12)
+#3      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1083:7)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from class _AssertionError and package:stack_trace)
+
+The test description was:
+  App starts with SplashScreen
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +0 -1: App starts with SplashScreen [E]
+  Test failed. See exception logs above.
+  The test description was: App starts with SplashScreen
+
+
+To run this test again: /Users/adhnan/Development/flutter/bin/cache/dart-sdk/bin/dart test /Users/adhnan/Development/chitt/test/widget_test.dart -p vm --plain-name 'App starts with SplashScreen'
+00:02 +0 -1: (tearDownAll)                                                                                                                                                                             00:02 +0 -1: Some tests failed.

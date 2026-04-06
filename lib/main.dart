@@ -1,5 +1,8 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:chitt/core/config/client_config.dart';
+import 'package:chitt/core/di/service_locator.dart';
 import 'package:chitt/core/design/theme/app_theme.dart';
 import 'package:chitt/core/design/theme/theme_provider.dart';
 import 'package:chitt/screens/splash_screen.dart';
@@ -20,12 +23,34 @@ import 'package:chitt/screens/organizer_chitti_details_screen.dart';
 import 'package:chitt/screens/chitti_payments_screen.dart';
 import 'package:chitt/screens/settlement_bill_screen.dart';
 import 'package:chitt/screens/document_viewer_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:chitt/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  const String configJson = String.fromEnvironment('CLIENT_CONFIG', defaultValue: '{}');
+  Map<String, dynamic> configMap = {};
+
+  if (configJson != '{}') {
+    configMap = jsonDecode(configJson);
+  } else {
+    configMap = {
+      'clientId': 'default_client',
+      'clientName': 'Chitti Manager',
+      'dbType': 'firebase',
+      'credentials': {
+        'apiKey': 'AIza...',
+        'appId': '1:...',
+        'messagingSenderId': '...',
+        'projectId': '...',
+        'databaseURL': 'https://...',
+        'storageBucket': '...',
+      }
+    };
+  }
+
+  final config = ClientConfig.fromMap(configMap);
+  await setupServiceLocator(config);
+
   runApp(
     ChangeNotifierProvider(
       create: (_) => ThemeProvider(),
@@ -42,7 +67,7 @@ class MyApp extends StatelessWidget {
     return Consumer<ThemeProvider>(
       builder: (context, themeProvider, _) {
         return MaterialApp(
-          title: 'Chitti Manager',
+          title: getIt<ClientConfig>().clientName,
           debugShowCheckedModeBanner: false,
           theme: AppTheme.light,
           darkTheme: AppTheme.dark,

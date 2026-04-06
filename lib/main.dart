@@ -33,17 +33,14 @@ void main() async {
   if (configJson != '{}') {
     configMap = jsonDecode(configJson);
   } else {
+    // Default to the provided Supabase project
     configMap = {
-      'clientId': 'default_client',
+      'clientId': 'supabase_client',
       'clientName': 'Chitti Manager',
-      'dbType': 'firebase',
+      'dbType': 'supabase',
       'credentials': {
-        'apiKey': 'AIza...',
-        'appId': '1:...',
-        'messagingSenderId': '...',
-        'projectId': '...',
-        'databaseURL': 'https://...',
-        'storageBucket': '...',
+        'url': 'https://tbeukllqrxwfrmdckrof.supabase.co',
+        'anonKey': 'sb_publishable_YeLDebDMHCcj468vFQRaDw_JyV6Crm_',
       }
     };
   }
